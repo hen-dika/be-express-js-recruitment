@@ -1,0 +1,913 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "ExpressJS - DevTest",
+    "contact": {},
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000/api",
+      "variables": {}
+    }
+  ],
+  "paths": {
+    "/event": {
+      "get": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "List Event",
+        "operationId": "ListEvent",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Express"
+                    },
+                    "example": "Express"
+                  }
+                }
+              },
+              "Content-Length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "443"
+                    },
+                    "example": "443"
+                  }
+                }
+              },
+              "ETag": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "W/\"1bb-aNFAybW8BDN7tJczmISkbhyNSyw\""
+                    },
+                    "example": "W/\"1bb-aNFAybW8BDN7tJczmISkbhyNSyw\""
+                  }
+                }
+              },
+              "Date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Wed, 16 Mar 2022 21:18:55 GMT"
+                    },
+                    "example": "Wed, 16 Mar 2022 21:18:55 GMT"
+                  }
+                }
+              },
+              "Connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "keep-alive"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "Keep-Alive": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "timeout=5"
+                    },
+                    "example": "timeout=5"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ListEvent"
+                  },
+                  "description": "",
+                  "example": [
+                    {
+                      "eventId": "lB3FCXdBmdAqIC4Tl79KjXULCLMIWi",
+                      "eventName": null,
+                      "eventLocation": null,
+                      "eventImage": null,
+                      "eventStartDate": null,
+                      "eventEndDate": null,
+                      "createdAt": "2022-03-16T20:30:58.672Z",
+                      "updatedAt": "2022-03-16T20:30:58.672Z"
+                    },
+                    {
+                      "eventId": "6B7yhfzCw6m91ILi2B6msp41F3Kz2I",
+                      "eventName": null,
+                      "eventLocation": null,
+                      "eventImage": null,
+                      "eventStartDate": null,
+                      "eventEndDate": null,
+                      "createdAt": "2022-03-16T20:42:51.662Z",
+                      "updatedAt": "2022-03-16T20:42:51.662Z"
+                    }
+                  ]
+                },
+                "example": [
+                  {
+                    "eventId": "lB3FCXdBmdAqIC4Tl79KjXULCLMIWi",
+                    "eventName": null,
+                    "eventLocation": null,
+                    "eventImage": null,
+                    "eventStartDate": null,
+                    "eventEndDate": null,
+                    "createdAt": "2022-03-16T20:30:58.672Z",
+                    "updatedAt": "2022-03-16T20:30:58.672Z"
+                  },
+                  {
+                    "eventId": "6B7yhfzCw6m91ILi2B6msp41F3Kz2I",
+                    "eventName": null,
+                    "eventLocation": null,
+                    "eventImage": null,
+                    "eventStartDate": null,
+                    "eventEndDate": null,
+                    "createdAt": "2022-03-16T20:42:51.662Z",
+                    "updatedAt": "2022-03-16T20:42:51.662Z"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Add Event",
+        "operationId": "AddEvent",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "eventName",
+                  "eventLocation",
+                  "eventStartDate",
+                  "eventEndDate"
+                ],
+                "type": "object",
+                "properties": {
+                  "eventName": {
+                    "type": "string",
+                    "example": "Synchronize Fest"
+                  },
+                  "eventLocation": {
+                    "type": "string",
+                    "example": "Yogyakarta"
+                  },
+                  "eventStartDate": {
+                    "type": "string",
+                    "example": "2022-03-31 10:30:00"
+                  },
+                  "eventEndDate": {
+                    "type": "string",
+                    "example": "2022-03-31 10:30:00"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "headers": {
+              "X-Powered-By": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Express"
+                    },
+                    "example": "Express"
+                  }
+                }
+              },
+              "Content-Length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "220"
+                    },
+                    "example": "220"
+                  }
+                }
+              },
+              "ETag": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "W/\"dc-vagB+1h4LU+s4WofPcWaJdXuI2A\""
+                    },
+                    "example": "W/\"dc-vagB+1h4LU+s4WofPcWaJdXuI2A\""
+                  }
+                }
+              },
+              "Date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Wed, 16 Mar 2022 21:19:17 GMT"
+                    },
+                    "example": "Wed, 16 Mar 2022 21:19:17 GMT"
+                  }
+                }
+              },
+              "Connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "keep-alive"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "Keep-Alive": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "timeout=5"
+                    },
+                    "example": "timeout=5"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/AddEvent"
+                },
+                "example": {
+                  "eventId": "BFfLTsm33YzGumRgIU8kDScXtTwDQP",
+                  "eventName": null,
+                  "eventLocation": null,
+                  "eventImage": null,
+                  "eventStartDate": null,
+                  "eventEndDate": null,
+                  "updatedAt": "2022-03-16T21:19:17.050Z",
+                  "createdAt": "2022-03-16T21:19:17.050Z"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/event/lB3FCXdBmdAqIC4Tl79KjXULCLMIWi": {
+      "get": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Show Event",
+        "operationId": "ShowEvent",
+        "parameters": [],
+        "responses": {
+          "404": {
+            "description": "Not Found",
+            "headers": {
+              "X-Powered-By": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Express"
+                    },
+                    "example": "Express"
+                  }
+                }
+              },
+              "Content-Length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "29"
+                    },
+                    "example": "29"
+                  }
+                }
+              },
+              "ETag": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "W/\"1d-Rx6dr1rj0iFpp9bWbf5GdqTr0kw\""
+                    },
+                    "example": "W/\"1d-Rx6dr1rj0iFpp9bWbf5GdqTr0kw\""
+                  }
+                }
+              },
+              "Date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Wed, 16 Mar 2022 21:19:26 GMT"
+                    },
+                    "example": "Wed, 16 Mar 2022 21:19:26 GMT"
+                  }
+                }
+              },
+              "Connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "keep-alive"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "Keep-Alive": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "timeout=5"
+                    },
+                    "example": "timeout=5"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFound1"
+                },
+                "example": {
+                  "message": "Event Not Found"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Express"
+                    },
+                    "example": "Express"
+                  }
+                }
+              },
+              "Content-Length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "220"
+                    },
+                    "example": "220"
+                  }
+                }
+              },
+              "ETag": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "W/\"dc-Q1g2BPT0f0C1CfJGj4uFF3G1iWs\""
+                    },
+                    "example": "W/\"dc-Q1g2BPT0f0C1CfJGj4uFF3G1iWs\""
+                  }
+                }
+              },
+              "Date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Wed, 16 Mar 2022 21:20:26 GMT"
+                    },
+                    "example": "Wed, 16 Mar 2022 21:20:26 GMT"
+                  }
+                }
+              },
+              "Connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "keep-alive"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "Keep-Alive": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "timeout=5"
+                    },
+                    "example": "timeout=5"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/Found"
+                },
+                "example": {
+                  "eventId": "lB3FCXdBmdAqIC4Tl79KjXULCLMIWi",
+                  "eventName": null,
+                  "eventLocation": null,
+                  "eventImage": null,
+                  "eventStartDate": null,
+                  "eventEndDate": null,
+                  "createdAt": "2022-03-16T20:30:58.672Z",
+                  "updatedAt": "2022-03-16T20:30:58.672Z"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Update Event",
+        "operationId": "UpdateEvent",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "eventName",
+                  "eventLocation",
+                  "eventStartDate",
+                  "eventEndDate"
+                ],
+                "type": "object",
+                "properties": {
+                  "eventName": {
+                    "type": "string",
+                    "example": "Synchronize Fest"
+                  },
+                  "eventLocation": {
+                    "type": "string",
+                    "example": "Yogyakarta"
+                  },
+                  "eventStartDate": {
+                    "type": "string",
+                    "example": "2022-03-31 10:30:00"
+                  },
+                  "eventEndDate": {
+                    "type": "string",
+                    "example": "2022-03-31 10:30:00"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Express"
+                    },
+                    "example": "Express"
+                  }
+                }
+              },
+              "Content-Length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "220"
+                    },
+                    "example": "220"
+                  }
+                }
+              },
+              "ETag": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "W/\"dc-Q1g2BPT0f0C1CfJGj4uFF3G1iWs\""
+                    },
+                    "example": "W/\"dc-Q1g2BPT0f0C1CfJGj4uFF3G1iWs\""
+                  }
+                }
+              },
+              "Date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Wed, 16 Mar 2022 21:20:49 GMT"
+                    },
+                    "example": "Wed, 16 Mar 2022 21:20:49 GMT"
+                  }
+                }
+              },
+              "Connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "keep-alive"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "Keep-Alive": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "timeout=5"
+                    },
+                    "example": "timeout=5"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateEvent"
+                },
+                "example": {
+                  "eventId": "lB3FCXdBmdAqIC4Tl79KjXULCLMIWi",
+                  "eventName": null,
+                  "eventLocation": null,
+                  "eventImage": null,
+                  "eventStartDate": null,
+                  "eventEndDate": null,
+                  "createdAt": "2022-03-16T20:30:58.672Z",
+                  "updatedAt": "2022-03-16T20:30:58.672Z"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/event/hjkus9Fd9BAkx2vMm7A28W4SGkiNom": {
+      "delete": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Delete Event",
+        "operationId": "DeleteEvent",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "headers": {
+              "X-Powered-By": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Express"
+                    },
+                    "example": "Express"
+                  }
+                }
+              },
+              "Date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Wed, 16 Mar 2022 21:21:31 GMT"
+                    },
+                    "example": "Wed, 16 Mar 2022 21:21:31 GMT"
+                  }
+                }
+              },
+              "Connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "keep-alive"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "Keep-Alive": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "timeout=5"
+                    },
+                    "example": "timeout=5"
+                  }
+                }
+              }
+            },
+            "content": {}
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ListEvent": {
+        "title": "ListEvent",
+        "required": [
+          "eventId",
+          "eventName",
+          "eventLocation",
+          "eventImage",
+          "eventStartDate",
+          "eventEndDate",
+          "createdAt",
+          "updatedAt"
+        ],
+        "type": "object",
+        "properties": {
+          "eventId": {
+            "type": "string"
+          },
+          "eventName": {
+            "type": "string",
+            "nullable": true
+          },
+          "eventLocation": {
+            "type": "string",
+            "nullable": true
+          },
+          "eventImage": {
+            "type": "string",
+            "nullable": true
+          },
+          "eventStartDate": {
+            "type": "string",
+            "nullable": true
+          },
+          "eventEndDate": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "eventId": "lB3FCXdBmdAqIC4Tl79KjXULCLMIWi",
+          "eventName": null,
+          "eventLocation": null,
+          "eventImage": null,
+          "eventStartDate": null,
+          "eventEndDate": null,
+          "createdAt": "2022-03-16T20:30:58.672Z",
+          "updatedAt": "2022-03-16T20:30:58.672Z"
+        }
+      },
+      "AddEvent": {
+        "title": "AddEvent",
+        "required": [
+          "eventId",
+          "eventName",
+          "eventLocation",
+          "eventImage",
+          "eventStartDate",
+          "eventEndDate",
+          "updatedAt",
+          "createdAt"
+        ],
+        "type": "object",
+        "properties": {
+          "eventId": {
+            "type": "string"
+          },
+          "eventName": {
+            "type": "string",
+            "nullable": true
+          },
+          "eventLocation": {
+            "type": "string",
+            "nullable": true
+          },
+          "eventImage": {
+            "type": "string",
+            "nullable": true
+          },
+          "eventStartDate": {
+            "type": "string",
+            "nullable": true
+          },
+          "eventEndDate": {
+            "type": "string",
+            "nullable": true
+          },
+          "updatedAt": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "eventId": "BFfLTsm33YzGumRgIU8kDScXtTwDQP",
+          "eventName": null,
+          "eventLocation": null,
+          "eventImage": null,
+          "eventStartDate": null,
+          "eventEndDate": null,
+          "updatedAt": "2022-03-16T21:19:17.050Z",
+          "createdAt": "2022-03-16T21:19:17.050Z"
+        }
+      },
+      "NotFound1": {
+        "title": "NotFound1",
+        "required": [
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "message": "Event Not Found"
+        }
+      },
+      "Found": {
+        "title": "Found",
+        "required": [
+          "eventId",
+          "eventName",
+          "eventLocation",
+          "eventImage",
+          "eventStartDate",
+          "eventEndDate",
+          "createdAt",
+          "updatedAt"
+        ],
+        "type": "object",
+        "properties": {
+          "eventId": {
+            "type": "string"
+          },
+          "eventName": {
+            "type": "string",
+            "nullable": true
+          },
+          "eventLocation": {
+            "type": "string",
+            "nullable": true
+          },
+          "eventImage": {
+            "type": "string",
+            "nullable": true
+          },
+          "eventStartDate": {
+            "type": "string",
+            "nullable": true
+          },
+          "eventEndDate": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "eventId": "lB3FCXdBmdAqIC4Tl79KjXULCLMIWi",
+          "eventName": null,
+          "eventLocation": null,
+          "eventImage": null,
+          "eventStartDate": null,
+          "eventEndDate": null,
+          "createdAt": "2022-03-16T20:30:58.672Z",
+          "updatedAt": "2022-03-16T20:30:58.672Z"
+        }
+      },
+      "UpdateEvent": {
+        "title": "UpdateEvent",
+        "required": [
+          "eventId",
+          "eventName",
+          "eventLocation",
+          "eventImage",
+          "eventStartDate",
+          "eventEndDate",
+          "createdAt",
+          "updatedAt"
+        ],
+        "type": "object",
+        "properties": {
+          "eventId": {
+            "type": "string"
+          },
+          "eventName": {
+            "type": "string",
+            "nullable": true
+          },
+          "eventLocation": {
+            "type": "string",
+            "nullable": true
+          },
+          "eventImage": {
+            "type": "string",
+            "nullable": true
+          },
+          "eventStartDate": {
+            "type": "string",
+            "nullable": true
+          },
+          "eventEndDate": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "eventId": "lB3FCXdBmdAqIC4Tl79KjXULCLMIWi",
+          "eventName": null,
+          "eventLocation": null,
+          "eventImage": null,
+          "eventStartDate": null,
+          "eventEndDate": null,
+          "createdAt": "2022-03-16T20:30:58.672Z",
+          "updatedAt": "2022-03-16T20:30:58.672Z"
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Misc",
+      "description": ""
+    }
+  ]
+}
